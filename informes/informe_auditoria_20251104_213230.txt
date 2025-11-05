@@ -1,0 +1,56 @@
+[2025-11-04T21:32:30.514939] SISTEMA: Actualización de configuración
+Detalles: {
+  "parametro": "tema",
+  "valor": "oscuro"
+}
+Resultado: configuracion_actualizada
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:30.513919] ERROR: Error en procesamiento
+Detalles: {
+  "tipo": "ValueError",
+  "mensaje": "Error de prueba"
+}
+Resultado: error
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:30.511866] COMANDO_VOZ: Comando de voz procesado
+Detalles: {
+  "comando": "abrir navegador",
+  "confianza": 0.95
+}
+Resultado: navegador_abierto
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:30.509183] ACCION_USUARIO: Inicio de sesión
+Detalles: {
+  "usuario": "usuario_prueba",
+  "origen": "formulario_web"
+}
+Resultado: éxito
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:00.662064] SISTEMA: Actualización de configuración
+Detalles: {
+  "parametro": "tema",
+  "valor": "oscuro"
+}
+Resultado: configuracion_actualizada
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:00.660519] ERROR: Error en procesamiento
+Detalles: {
+  "tipo": "ValueError",
+  "mensaje": "Error de prueba"
+}
+Resultado: error
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:00.658693] COMANDO_VOZ: Comando de voz procesado
+Detalles: {
+  "comando": "abrir navegador",
+  "confianza": 0.95
+}
+Resultado: navegador_abierto
+--------------------------------------------------------------------------------
+[2025-11-04T21:32:00.657389] ACCION_USUARIO: Inicio de sesión
+Detalles: {
+  "usuario": "usuario_prueba",
+  "origen": "formulario_web"
+}
+Resultado: éxito
+--------------------------------------------------------------------------------

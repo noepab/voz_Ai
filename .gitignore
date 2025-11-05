@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Modelos de voz
+models/
+
+# Archivos de entorno
+.env
+
+# Archivos de configuración local
+config.json
+
+# Archivos de audio temporales
+*.wav
+*.mp3
+
+# Archivos de base de datos
+*.db
+*.sqlite3

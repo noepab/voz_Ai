@@ -1,0 +1,58 @@
+[
+  {
+    "id": "5c85a4d4-f630-4751-a4fd-06d818210fe4",
+    "timestamp": "2025-11-04T21:32:00.662064",
+    "tipo": "SISTEMA",
+    "usuario": "Alejandro",
+    "accion": "Actualización de configuración",
+    "detalles": {
+      "parametro": "tema",
+      "valor": "oscuro"
+    },
+    "resultado": "configuracion_actualizada",
+    "ip": "192.168.1.132",
+    "user_agent": "Windows 11 AMD64"
+  },
+  {
+    "id": "cf273ac2-a08a-4026-a536-ec6bfba18ae1",
+    "timestamp": "2025-11-04T21:32:00.660519",
+    "tipo": "ERROR",
+    "usuario": "Alejandro",
+    "accion": "Error en procesamiento",
+    "detalles": {
+      "tipo": "ValueError",
+      "mensaje": "Error de prueba"
+    },
+    "resultado": "error",
+    "ip": "192.168.1.132",
+    "user_agent": "Windows 11 AMD64"
+  },
+  {
+    "id": "c78c2096-b8d8-42cc-8b5a-8ca71eeac49c",
+    "timestamp": "2025-11-04T21:32:00.658693",
+    "tipo": "COMANDO_VOZ",
+    "usuario": "Alejandro",
+    "accion": "Comando de voz procesado",
+    "detalles": {
+      "comando": "abrir navegador",
+      "confianza": 0.95
+    },
+    "resultado": "navegador_abierto",
+    "ip": "192.168.1.132",
+    "user_agent": "Windows 11 AMD64"
+  },
+  {
+    "id": "40b375fa-d011-4a27-bd01-2bc8cadad97f",
+    "timestamp": "2025-11-04T21:32:00.657389",
+    "tipo": "ACCION_USUARIO",
+    "usuario": "Alejandro",
+    "accion": "Inicio de sesión",
+    "detalles": {
+      "usuario": "usuario_prueba",
+      "origen": "formulario_web"
+    },
+    "resultado": "éxito",
+    "ip": "192.168.1.132",
+    "user_agent": "Windows 11 AMD64"
+  }
+]

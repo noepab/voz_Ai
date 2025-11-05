@@ -1,0 +1,28 @@
+tu_proyecto/
+├── archivo.py                    ← Tu código (artifact principal)
+├── setup.bat                     ← Instalador (ejecutar PRIMERO)
+├── iniciar.bat                   ← Launcher (ejecutar DESPUÉS)
+├── requirements.txt              ← Dependencias
+├── README.txt                    ← Documentación completa
+├── models/
+│   └── vosk-model-small-es-0.42/ ← Descargar modelo aquí
+├── venv/                         ← Se crea con setup.bat
+├── asistente.log                 ← Se crea al ejecutar
+└── historial_comandos.txt        ← Se crea al ejecutar
+```
+
+---
+
+## 🚀 PASOS PARA EL USUARIO FINAL:
+
+1. **Primera vez:**
+```
+   - Doble clic en "setup.bat"
+   - Esperar instalación
+   - Descargar modelo Vosk
+```
+
+2. **Cada vez que uses el asistente:**
+```
+   - Doble clic en "iniciar.bat"
+   - ¡Listo!

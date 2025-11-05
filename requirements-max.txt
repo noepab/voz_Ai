@@ -1,0 +1,18 @@
+﻿# Procesamiento de audio
+sounddevice>=0.4.6
+numpy>=1.21.0
+pyaudio>=0.2.11
+
+# Reconocimiento de voz
+vosk>=0.3.45
+
+# Texto a voz
+pyttsx3>=2.90
+
+# Interfaz gráfica
+ttkthemes>=3.2.2
+
+# Utilidades
+pyautogui>=0.9.53
+psutil>=5.9.0
+python-dateutil>=2.8.2

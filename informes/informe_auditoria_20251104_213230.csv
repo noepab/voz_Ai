@@ -1,0 +1,9 @@
+accion,detalles,id,ip,resultado,timestamp,tipo,user_agent,usuario
+Actualización de configuración,"{'parametro': 'tema', 'valor': 'oscuro'}",8fbe0282-d8b0-44d2-952b-c99339678c95,192.168.1.132,configuracion_actualizada,2025-11-04T21:32:30.514939,SISTEMA,Windows 11 AMD64,Alejandro
+Error en procesamiento,"{'tipo': 'ValueError', 'mensaje': 'Error de prueba'}",52b43d56-54cf-4e7e-b269-16b5c8dbe8e6,192.168.1.132,error,2025-11-04T21:32:30.513919,ERROR,Windows 11 AMD64,Alejandro
+Comando de voz procesado,"{'comando': 'abrir navegador', 'confianza': 0.95}",2691495a-39e9-456b-b0e8-ea62f99a43b7,192.168.1.132,navegador_abierto,2025-11-04T21:32:30.511866,COMANDO_VOZ,Windows 11 AMD64,Alejandro
+Inicio de sesión,"{'usuario': 'usuario_prueba', 'origen': 'formulario_web'}",94b4e28d-10f1-498a-b51c-21ca410e847a,192.168.1.132,éxito,2025-11-04T21:32:30.509183,ACCION_USUARIO,Windows 11 AMD64,Alejandro
+Actualización de configuración,"{'parametro': 'tema', 'valor': 'oscuro'}",5c85a4d4-f630-4751-a4fd-06d818210fe4,192.168.1.132,configuracion_actualizada,2025-11-04T21:32:00.662064,SISTEMA,Windows 11 AMD64,Alejandro
+Error en procesamiento,"{'tipo': 'ValueError', 'mensaje': 'Error de prueba'}",cf273ac2-a08a-4026-a536-ec6bfba18ae1,192.168.1.132,error,2025-11-04T21:32:00.660519,ERROR,Windows 11 AMD64,Alejandro
+Comando de voz procesado,"{'comando': 'abrir navegador', 'confianza': 0.95}",c78c2096-b8d8-42cc-8b5a-8ca71eeac49c,192.168.1.132,navegador_abierto,2025-11-04T21:32:00.658693,COMANDO_VOZ,Windows 11 AMD64,Alejandro
+Inicio de sesión,"{'usuario': 'usuario_prueba', 'origen': 'formulario_web'}",40b375fa-d011-4a27-bd01-2bc8cadad97f,192.168.1.132,éxito,2025-11-04T21:32:00.657389,ACCION_USUARIO,Windows 11 AMD64,Alejandro
