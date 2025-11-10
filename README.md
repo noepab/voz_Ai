@@ -1,60 +1,113 @@
-# Asistente de Voz Inteligente
+# 🎙️ AGP - Asistente de Voz Inteligente
 
-Un asistente de voz en español con reconocimiento de voz avanzado, procesamiento de comandos y sistema de plugins.
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/noepab/voz_Ai?style=social)](https://github.com/noepab/voz_Ai/stargazers)
 
-## Características
+Un asistente de voz en español con reconocimiento de voz avanzado, procesamiento de comandos y sistema de plugins. Desarrollado con Python y tecnologías de IA para ofrecer una experiencia de usuario fluida y personalizable.
 
-- 🎤 Reconocimiento de voz en tiempo real con Vosk
-- 🎧 Procesamiento de audio avanzado con reducción de ruido
-- 🔌 Sistema de plugins para extender funcionalidades
-- 🌍 Soporte para múltiples idiomas
-- 🧠 Sistema de aprendizaje automático para mejorar el reconocimiento
-- 🖥️ Interfaz web opcional para monitoreo y control
+<p align="center">
+  <img src="https://img.shields.io/badge/status-activo-brightgreen" alt="Estado del proyecto">
+  <img src="https://img.shields.io/github/last-commit/noepab/voz_Ai" alt="Último commit">
+  <img src="https://img.shields.io/github/issues/noepab/voz_Ai" alt="Issues abiertos">
+</p>
 
-## Requisitos
+## ✨ Características principales
 
+### 🎤 Reconocimiento de voz avanzado
+- Procesamiento en tiempo real con Vosk
+- Reducción de ruido y mejora de audio
+- Soporte para múltiples idiomas
+- Palabras de activación personalizables
+
+### 🛠️ Funcionalidades principales
+- Ejecución de comandos por voz
+- Sistema de plugins modular
+- Interfaz gráfica intuitiva
+- Monitoreo de recursos del sistema
+
+### 🚀 Características técnicas
+- Arquitectura modular y escalable
+- Procesamiento en segundo plano
+- Sistema de logging avanzado
+- Gestión eficiente de recursos
+
+## 📋 Requisitos del sistema
+
+### Hardware
+- Procesador: Dual-core 2GHz o superior
+- Memoria RAM: 4GB mínimo (8GB recomendado)
+- Espacio en disco: 1GB libre
+- Micrófono (con cancelación de ruido recomendada)
+
+### Software
 - Python 3.8 o superior
-- Sistema operativo: Windows/Linux/macOS
-- Micrófono funcionando
-- Conexión a Internet (solo para características que lo requieran)
+- Sistema operativo:
+  - Windows 10/11
+  - macOS 10.15+
+  - Linux (Ubuntu 20.04+, Fedora 32+, etc.)
+- Conexión a Internet (opcional, para ciertas funcionalidades)
 
-## Instalación
+## 🚀 Instalación rápida
 
-1. Clona el repositorio:
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/noepab/voz_Ai.git
+cd voz_Ai
+```
 
-   ```bash
-   git clone https://github.com/tuusuario/asistente-voz.git
-   cd asistente-voz
-   ```
+### 2. Configurar entorno virtual (recomendado)
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-2. Crea un entorno virtual (recomendado):
+# Linux/macOS
+python3 -m venv venv
+source venv/bin/activate
+```
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # En Windows: venv\Scripts\activate
-   ```
+### 3. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
 
-3. Instala las dependencias:
+### 4. Descargar modelo de voz
+```bash
+# Crear directorio para modelos
+mkdir -p models
 
-   ```bash
-   pip install -r requirements-updated.txt
-   ```
+# Descargar modelo en español (versión pequeña)
+curl -L https://alphacephei.com/vosk/models/vosk-model-small-es-0.42.zip -o vosk-model-small-es-0.42.zip
+unzip vosk-model-small-es-0.42.zip -d models/
+mv models/vosk-model-small-es-0.42 models/vosk-model
 
-4. Descarga el modelo de voz en español de Vosk:
+# Alternativa: modelo más grande (mejor precisión pero más lento)
+# curl -L https://alphacephei.com/vosk/models/vosk-model-es-0.42.zip -o vosk-model-es-0.42.zip
+```
 
-   ```bash
-   mkdir -p models
-   cd models
-   wget https://alphacephei.com/vosk/models/vosk-model-small-es-0.42.zip
-   unzip vosk-model-small-es-0.42.zip
-   mv vosk-model-small-es-0.42 vosk-model
-   cd ..
-   ```
+## 🏃 Ejecución
+
+### Modo asistente de voz
+```bash
+python main.py
+```
+
+### Modo desarrollo (con logs detallados)
+```bash
+python -m main --debug
+```
+
+### Opciones disponibles
+```bash
+--debug     Modo depuración (más información en consola)
+--no-gui    Ejecutar sin interfaz gráfica
+--lang es   Establecer idioma (es/en)
+```
 
 ## Uso
 
 ### Iniciar el asistente
-
 ```bash
 python main.py
 ```

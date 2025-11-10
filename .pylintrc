@@ -1,0 +1,28 @@
+[MASTER]
+ignore=.git,__pycache__,venv,build,dist
+load-plugins=pylint.extensions.mccabe
+
+[FORMAT]
+max-line-length=88
+indent-string='    '
+
+[MESSAGES CONTROL]
+disable=missing-docstring,
+       too-few-public-methods,
+       too-many-arguments,
+       too-many-locals,
+       too-many-branches,
+       too-many-statements
+
+[DESIGN]
+max-args=6
+max-locals=15
+max-returns=6
+max-branches=12
+max-statements=50
+max-parents=7
+max-attributes=12
+min-public-methods=1
+
+[TYPECHECK]
+generated-members=numpy.*,tensorflow.*,torch.*,pandas.*,matplotlib.*,sklearn.*,scipy.*,cv2.*,PIL.*,PIL.Image,keras.*,tensorflow.keras.*,tqdm.*,requests.*,yaml.*,json.*,os.*,sys.*,re.*,time.*,datetime.*,math.*,random.*,collections.*,itertools.*,functools.*,typing.*,pathlib.*,shutil.*,subprocess.*,multiprocessing.*,threading.*,queue.*,asyncio.*,aiohttp.*,flask.*,django.*,fastapi.*,uvicorn.*,pydantic.*,sqlalchemy.*,pymongo.*,redis.*,pika.*,celery.*,pytest.*,unittest.*,mock.*,hypothesis.*,pylint.*,black.*,flake8.*,mypy.*,isort.*,pytest_cov.*,coverage.*,sphinx.*,pdoc3.*,mkdocs.*,mkdocs-material.*,mkdocstrings.*,mkdocs-material-extensions.*,mkdocs-git-revision-date-localized-plugin.*,mkdocs-minify-plugin.*,mkdocs-redirects.*,mkdocs-rtd-dropdown.*,mkdocs-simple-hooks.*,mkdocs-same-dir.*,mkdocs-macros-plugin.*,mkdocs-autolinks-plugin.*,mkdocs-awesome-pages-plugin.*,mkdocs-blog-plugin.*,mkdocs-bootstrap4.*,mkdocs-bootswatch.*,mkdocs-bootstrap386.*
