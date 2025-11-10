@@ -1,0 +1,156 @@
+version: "3.9"
+
+services:
+  # === AUTOMATIZACIONES ===
+  n8n:
+    image: n8nio/n8n
+    container_name: agp_n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    volumes:
+      - ./agp/n8n_data:/home/node/.n8n
+    environment:
+      - TZ=${TZ}
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+    networks:
+      - agp_net
+
+  # === DESARROLLO WEB ===
+  code_server:
+    image: codercom/code-server:latest
+    container_name: agp_code
+    restart: unless-stopped
+    ports:
+      - "57080:8080"
+    volumes:
+      - ./agp/code_data:/home/coder/project
+    environment:
+      - TZ=${TZ}
+      - PASSWORD=${CODE_PASSWORD}
+    networks:
+      - agp_net
+
+  # === MONITORIZACIÓN ===
+  uptime_kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: agp_uptime
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./agp/uptime_data:/app/data
+    networks:
+      - agp_net
+
+  # === GESTIÓN DE CONTRASEÑAS ===
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: agp_vaultwarden
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./agp/vaultwarden_data:/data
+    environment:
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN}
+      - TZ=${TZ}
+    networks:
+      - agp_net
+
+  # === ACCESO SEGURO VIA CLOUDFLARED ===
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: agp_cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    volumes:
+      - ./agp/cloudflared:/etc/cloudflared
+    networks:
+      - agp_net
+
+  # === ALMACENAMIENTO EN NUBE PRIVADA ===
+  nextcloud_db:
+    image: mariadb:10.11
+    container_name: agp_nextcloud_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud
+    volumes:
+      - ./agp/nextcloud_db:/var/lib/mysql
+    networks:
+      - agp_net
+
+  nextcloud:
+    image: nextcloud
+    container_name: agp_nextcloud
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    depends_on:
+      - nextcloud_db
+    volumes:
+      - ./agp/nextcloud_data:/var/www/html
+    environment:
+      - MYSQL_HOST=nextcloud_db
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud
+    networks:
+      - agp_net
+
+  # === CRM GRATUITO ===
+  espocrm_db:
+    image: mariadb:10.11
+    container_name: agp_crm_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=espocrm
+      - MYSQL_USER=espocrm
+      - MYSQL_PASSWORD=espocrm
+    volumes:
+      - ./agp/crm_db:/var/lib/mysql
+    networks:
+      - agp_net
+
+  espocrm:
+    image: espocrm/espocrm
+    container_name: agp_crm
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    depends_on:
+      - espocrm_db
+    volumes:
+      - ./agp/crm_data:/var/www/html
+    environment:
+      - ESPOCRM_ADMIN_USER=${CRM_USER}
+      - ESPOCRM_ADMIN_PASS=${CRM_PASSWORD}
+      - MYSQL_HOST=agp_crm_db
+      - MYSQL_DATABASE=espocrm
+      - MYSQL_USER=espocrm
+      - MYSQL_PASSWORD=espocrm
+    networks:
+      - agp_net
+
+  # === MONITORIZACIÓN INTERNA ===
+  prometheus:
+    image: prom/prometheus
+    container_name: agp_prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./agp/prometheus_data:/prometheus
+    networks:
+      - agp_net
+
+networks:
+  agp_net:
+    driver: bridge

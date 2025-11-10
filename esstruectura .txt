@@ -1,0 +1,40 @@
+C:\voz_ai\
+│
+├── docker-compose.yml          # Orquestación completa de la Superapp IA
+│
+├── backend/                    # Módulo de control y lógica central
+│   ├── app.py                  # Motor de rutas (API de la superapp)
+│   ├── actions/                # Scripts de acciones concretas
+│   │   ├── docker_control.py
+│   │   ├── n8n_control.py
+│   │   ├── alexa_bridge.py
+│   │   └── homeassistant.py
+│   ├── memory/                 # Memoria contextual local
+│   │   ├── memory.db
+│   │   └── embeddings/
+│   └── config.yaml             # Configuración general
+│
+├── voice/                      # Módulo de voz (escucha + habla)
+│   ├── listener.py             # Captura de micrófono (Vosk/Whisper)
+│   ├── recognizer.py           # Conversión voz→texto
+│   ├── responder.py            # Conversión texto→voz (TTS)
+│   └── commands.yml            # Lista de comandos naturales
+│
+├── ai_core/                    # Núcleo de inteligencia
+│   ├── intent_parser.py        # Interpreta intenciones y contexto
+│   ├── router.py               # Envía cada intención al módulo correcto
+│   ├── local_gpt.py            # Modelo GPT local (Ollama / DeepSeek)
+│   └── rag_engine.py           # Sistema RAG local (SQLite + embeddings)
+│
+├── panel/                      # Interfaz visual de control (web/app)
+│   ├── frontend/               # React o Svelte (interfaz)
+│   ├── api/                    # Conecta con backend vía REST
+│   └── public/
+│
+├── scripts/                    # Utilidades locales
+│   ├── start-all.sh
+│   ├── stop-all.sh
+│   ├── restart-all.sh
+│   └── logs-viewer.sh
+│
+└── .env                        # Variables de entorno (tokens, claves, rutas)
